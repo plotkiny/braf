@@ -1,13 +1,32 @@
 import numpy as np
 import tqdm
+from functools import partial 
 
 EPS = 1e-12
 
+
+# put this in top-level scope so it can be pickled 
+def _return_const(*args, **kwargs):
+    return kwargs['val'] 
+
+
 class BinaryDecisionNode:
     def __init__(self, X, y, node_depth=0, n_search_pts=100, max_features=None):
-        '''On construction, the BinaryDecisionNode fits itself
+        '''
+        Binary decision node.
+
+        On construction, the BinaryDecisionNode fits itself
         to the provided data. If node_depth > 0, it will create
-        and fit two nodes on the results of this node'''
+        and fit two nodes on the results of this node
+
+        Parameters:
+        X (ndarray): features
+        y (ndarray): binary labels
+        node_depth (int): number of nodes to descend 
+        n_search_pts (int): number of points in the grid used to search for an
+                            optimal decision threshold 
+        max_features (int): maximum number of features to optimize over at each node
+        '''
 
         # we assume data is in the form (samples, features)
         # and labels are a 1D binary vector
@@ -23,9 +42,14 @@ class BinaryDecisionNode:
         else:
             features = np.random.permutation(X.shape[1])[:max_features]
 
+        # gini index of the data fed into this node
         gini0 = self.gini_index(y)
         best_delta = 0 
         for i_ft in features:
+            # iterate over the possible features, find the best 
+            # boundary and the corresponding gini index. pick the 
+            # choice of i_ft and boundary that maximizes the drop
+            # from gini0 (new_delta)
             x = X[:,i_ft]
             boundary, new_delta = self.max_delta_gini(
                     x=x, y=y, lo=np.min(x), hi=np.max(x),
@@ -40,11 +64,19 @@ class BinaryDecisionNode:
         if self.decision_boundary is not None:
             # we found a valid decision boundary
 
+            # run inference on this node to split the dataset. 
             mask = self(X, descend=False) 
+
+            # save the mean values of the left and right splits.
+            # not strictly needed if this is not a leaf, but it's
+            # useful for debugging. could also be useful if we ever
+            # prune the tree.
             self.right_val = y[mask].sum() / (y[mask].shape[0] + EPS)
             self.left_val = y[~mask].sum() / (y[~mask].shape[0] + EPS)
 
             if node_depth > 0:
+                # if we haven't reached the max node depth, fit left
+                # and right nodes:
                 self.left = BinaryDecisionNode(
                         X[~mask], y[~mask], node_depth=node_depth-1, 
                         n_search_pts=n_search_pts
@@ -55,19 +87,33 @@ class BinaryDecisionNode:
                     )
                 leaf = False # has children -> not a leaf 
         else:
-            # no valid decision boundary 
+            # no valid decision boundary, so left = right. use the mean
+            # of the current dataset as the prediction for this node
             self.left_val = self.right_val = np.mean(y) 
 
         if leaf:
             # if no children, make the 'children' the mean value in each category
-            self.right = lambda X=None, y=None, descend=True: self.right_val
-            self.left = lambda X=None, y=None, descend=True: self.left_val
+            self.right = partial(_return_const, val=self.right_val)
+            self.left = partial(_return_const, val=self.left_val)
 
     def __call__(self, X, y=None, descend=True):
-        '''Infer the decision node on a dataset.
-        If descend=True, we traverse the children
-        until we hit leaves. Otherwise, just return a 
-        boolean array of the decision at this node'''
+        '''
+        infer the decision node on a dataset.
+
+        if descend=true, we traverse the children
+        until we hit leaves. otherwise, just return a 
+        boolean array of the decision at this node
+
+        Parameters: 
+        X (ndarray): features
+        y (ndarray): labels, optional 
+        descend (boolean): should we descend down into children nodes or not
+
+        Returns:
+        ndarray: if descend, we guarantee to end at a leaf, so return the prediction
+                 of leaf nodes. if not descend, just return a 0-1 array containing the
+                 the decision of this node
+        '''
 
         if y is None:
             y = np.ones(X.shape[0]) # dummy
@@ -104,7 +150,8 @@ class BinaryDecisionNode:
         the drop in gini index (with respect to
         gini0) in a specified range
 
-        returns: decision boundary that maximizes delta gini, delta gini'''
+        Returns: 
+        decision boundary that maximizes delta gini, delta gini'''
         search_pts = np.linspace(lo, hi, n_search_pts)
         best_delta = 0 
         best_threshold = lo 
@@ -123,6 +170,10 @@ class BinaryDecisionNode:
         return 1 - p0**2 - (1-p0)**2
 
     def __str__(self):
+        '''
+        recursively write a descriptive string for this node
+        and its children. useful for debugging 
+        '''
         def parse_child(s):
             s = s.split('\n')
             s = s[:1] + ['        ' + ss for ss in s[1:]]
@@ -143,6 +194,14 @@ class BinaryDecisionNode:
 
 
 class BinaryDecisionTree:
+    '''
+    Binary decision tree. 
+
+    Parameters:
+    node_depth (int): maximum depth of the tree 
+    n_search_pts (int): number of points in the search grid 
+    max_features_per_node (int): maximum number of features each node is allowed to use 
+    '''
     def __init__(self, node_depth, n_search_pts=100, max_features_per_node=None):
         self.node_depth = node_depth 
         self.max_features = max_features_per_node
@@ -150,11 +209,26 @@ class BinaryDecisionTree:
         self.root = None 
 
     def fit(self, X, y):
+        '''
+        Fit the tree
+
+        Parameters:
+        X (ndarray): features 
+        y (ndaray): labels 
+        '''
+
         self.root = BinaryDecisionNode(X, y, self.node_depth, 
                                        n_search_pts=self.n_search_pts,
                                        max_features=self.max_features)
 
     def predict(self, X):
+        '''
+        Run inference 
+
+        Parameters 
+        X (ndarray): features 
+        '''
+
         assert (self.root is not None), ('Trying to run predict on a tree that has not been fit!')
         return self.root(X)
 
@@ -163,13 +237,30 @@ class BinaryDecisionTree:
 
 
 class RandomForest:
+    '''
+    Random forest
+
+    Parameters:
+    n_trees (int): number of trees 
+    bagging_frac (int): fraction of training set used for training each tree  
+    node_depth (int): maximum tree depth 
+    n_search_pts (int): number of points used to search for optimal decision threshold 
+    max_features_per_node (int): maximum features each node is allowed to use 
+    '''
     def __init__(self, n_trees, bagging_frac, node_depth, n_search_pts, max_features_per_node):
         self.trees = [BinaryDecisionTree(node_depth, n_search_pts, max_features_per_node) 
                       for _ in range(n_trees)]
         self.bagging_frac = bagging_frac 
 
     def fit(self, X, y):
-        for tree in tqdm.tqdm(self.trees):
+        '''
+        Fit the forest 
+
+        Parameters:
+        X (ndarray): features 
+        y (ndaray): labels 
+        '''
+        for tree in self.trees: 
             N = 0
             while N == 0:
                 mask = np.random.binomial(1, size=X.shape[0], p=self.bagging_frac).astype(bool)
@@ -177,6 +268,13 @@ class RandomForest:
             tree.fit(X[mask, :], y[mask])
 
     def predict(self, X):
+        '''
+        Run inference 
+
+        Parameters 
+        X (ndarray): features 
+        '''
+
         return np.mean([tree.predict(X) for tree in self.trees], axis=0)
 
     def __str__(self):

@@ -11,15 +11,28 @@ def euclidean_distance_2(x0, x1):
 
 
 class KNN:
-    '''A K-NN implementatation that performs in O(n) time for each query'''
+    '''
+    A K-NN implementatation that performs in O(n) time for each query
+
+    Parameters:
+    k (int): number of nearest neighbors 
+    metric (str): the metric function. only Euclidean is supported at the moment
+    '''
     def __init__(self, k, metric='euclidean'):
         self._k = k 
         if metric == 'euclidean':
             self._metric = euclidean_distance_2
     
     def get_neighbors(self, X, Z):
-        '''get_neighbors returns the k nearest neighbors 
-           in Z of elements of X
+        '''
+        compute the k nearest neighbors in Z of elements of X
+
+        Parameters:
+        X (ndarray)
+        Z (ndarray)
+
+        Returns:
+        ndarray: an array of indices in Z, of shape (X.shape[0], k)
         '''
 
         # D[i,j] is the distance between X[i] and Z[j]
