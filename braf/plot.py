@@ -49,13 +49,15 @@ def roc(yhat, y, path, suffix):
     compute ROC curve and return AUC
 
     Parameters:
-    yhat (ndarray): prediction score for the positive class
-    y (ndarray): binary label
-    path (str): output directory to which the plot should be saved 
-    suffix (str): label to make the plot filename unique
+
+    - yhat (ndarray): prediction score for the positive class
+    - y (ndarray): binary label
+    - path (str): output directory to which the plot should be saved 
+    - suffix (str): label to make the plot filename unique
 
     Returns:
-    float: area under the ROC curve
+    
+    - float: area under the ROC curve
     '''
 
     thresholds = np.linspace(1, 0, 25) 
@@ -86,13 +88,15 @@ def prc(yhat, y, path, suffix):
     compute PRC curve and return AUC
 
     Parameters:
-    yhat (ndarray): prediction score for the positive class
-    y (ndarray): binary label
-    path (str): output directory to which the plot should be saved 
-    suffix (str): label to make the plot filename unique
+
+    - yhat (ndarray): prediction score for the positive class
+    - y (ndarray): binary label
+    - path (str): output directory to which the plot should be saved 
+    - suffix (str): label to make the plot filename unique
 
     Returns:
-    float: area under the PRC curve
+    
+    - float: area under the PRC curve
     '''
 
     thresholds = np.linspace(1, 0, 25) 

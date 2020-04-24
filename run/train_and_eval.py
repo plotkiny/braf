@@ -38,6 +38,8 @@ def main(args):
     # dimension is in the same units
     mean_map, std_map = utils.standardize_features(df)
 
+    plot.df_hist(df, args.output_path, 'standardized')
+
     # split the dataset in train and test sets
     train_mask = np.random.binomial(n=1, p=args.train_frac, size=df.shape[0]).astype(bool)
     df_train = df[train_mask]

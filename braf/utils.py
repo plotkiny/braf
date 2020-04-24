@@ -6,15 +6,17 @@ def mean_impute(df, missing_vals, imputed_vals={}):
     impute missing values in-place
 
     Parameters:
-    df (Dataframe): dataframe 
-    missing_vals (dict): a dictionary mapping col_name -> value 
+
+    - df (Dataframe): dataframe 
+    - missing_vals (dict): a dictionary mapping col_name -> value 
                          where value indicates the feature is missing
-    imputed_vals (dict): an optional dictionary mapping col_name -> mean_value 
+    - imputed_vals (dict): an optional dictionary mapping col_name -> mean_value 
                          where mean_value is the mean of non-missing values.
                          if not provided, it will be computed from df. 
     
     Returns:
-    dict: a completed copy of imputed_vals 
+    
+    - dict: a completed copy of imputed_vals 
     '''
 
     for col, missing_val in missing_vals.items():
@@ -31,16 +33,18 @@ def standardize_features(df, means={}, stds={}, skip={'Outcome'}):
     standardize features in-place
 
     Parameters:
-    df (Dataframe): dataframe 
-    means (dict): a dictionary mapping col_name -> mean value. if not provided,
+    
+    - df (Dataframe): dataframe 
+    - means (dict): a dictionary mapping col_name -> mean value. if not provided,
                   it will be computed from df.
-    stds (dict):  a dictionary mapping col_name -> std value. if not provided,
+    - stds (dict):  a dictionary mapping col_name -> std value. if not provided,
                   it will be computed from df.
-    skip (set): a set of columns to skip, e.g. label columns
+    - skip (set): a set of columns to skip, e.g. label columns
     
     Returns:
-    dict: a completed copy of means 
-    dict: a completed copy of stds 
+    
+    - dict: a completed copy of means 
+    - dict: a completed copy of stds 
     '''
 
     for col in df.columns:

@@ -15,8 +15,9 @@ class KNN:
     A K-NN implementatation that performs in O(n) time for each query
 
     Parameters:
-    k (int): number of nearest neighbors 
-    metric (str): the metric function. only Euclidean is supported at the moment
+    
+    - k (int): number of nearest neighbors 
+    - metric (str): the metric function. only Euclidean is supported at the moment
     '''
     def __init__(self, k, metric='euclidean'):
         self._k = k 
@@ -28,11 +29,13 @@ class KNN:
         compute the k nearest neighbors in Z of elements of X
 
         Parameters:
-        X (ndarray)
-        Z (ndarray)
+        
+        - X (ndarray)
+        - Z (ndarray)
 
         Returns:
-        ndarray: an array of indices in Z, of shape (X.shape[0], k)
+
+        - ndarray: an array of indices in Z, of shape (X.shape[0], k)
         '''
 
         # D[i,j] is the distance between X[i] and Z[j]

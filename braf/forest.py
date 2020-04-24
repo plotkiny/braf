@@ -20,12 +20,13 @@ class BinaryDecisionNode:
         and fit two nodes on the results of this node
 
         Parameters:
-        X (ndarray): features
-        y (ndarray): binary labels
-        node_depth (int): number of nodes to descend 
-        n_search_pts (int): number of points in the grid used to search for an
-                            optimal decision threshold 
-        max_features (int): maximum number of features to optimize over at each node
+
+        - X (ndarray): features
+        - y (ndarray): binary labels
+        - node_depth (int): number of nodes to descend 
+        - n_search_pts (int): number of points in the grid used to search for an
+                              optimal decision threshold 
+        - max_features (int): maximum number of features to optimize over at each node
         '''
 
         # we assume data is in the form (samples, features)
@@ -105,12 +106,14 @@ class BinaryDecisionNode:
         boolean array of the decision at this node
 
         Parameters: 
-        X (ndarray): features
-        y (ndarray): labels, optional 
-        descend (boolean): should we descend down into children nodes or not
+
+        - X (ndarray): features
+        - y (ndarray): labels, optional 
+        - descend (boolean): should we descend down into children nodes or not
 
         Returns:
-        ndarray: if descend, we guarantee to end at a leaf, so return the prediction
+
+        - ndarray: if descend, we guarantee to end at a leaf, so return the prediction
                  of leaf nodes. if not descend, just return a 0-1 array containing the
                  the decision of this node
         '''
@@ -151,7 +154,8 @@ class BinaryDecisionNode:
         gini0) in a specified range
 
         Returns: 
-        decision boundary that maximizes delta gini, delta gini'''
+        
+        - decision boundary that maximizes delta gini, delta gini'''
         search_pts = np.linspace(lo, hi, n_search_pts)
         best_delta = 0 
         best_threshold = lo 
@@ -198,9 +202,10 @@ class BinaryDecisionTree:
     Binary decision tree. 
 
     Parameters:
-    node_depth (int): maximum depth of the tree 
-    n_search_pts (int): number of points in the search grid 
-    max_features_per_node (int): maximum number of features each node is allowed to use 
+
+    - node_depth (int): maximum depth of the tree 
+    - n_search_pts (int): number of points in the search grid 
+    - max_features_per_node (int): maximum number of features each node is allowed to use 
     '''
     def __init__(self, node_depth, n_search_pts=100, max_features_per_node=None):
         self.node_depth = node_depth 
@@ -213,8 +218,9 @@ class BinaryDecisionTree:
         Fit the tree
 
         Parameters:
-        X (ndarray): features 
-        y (ndaray): labels 
+
+        - X (ndarray): features 
+        - y (ndaray): labels 
         '''
 
         self.root = BinaryDecisionNode(X, y, self.node_depth, 
@@ -226,7 +232,8 @@ class BinaryDecisionTree:
         Run inference 
 
         Parameters 
-        X (ndarray): features 
+
+        - X (ndarray): features 
         '''
 
         assert (self.root is not None), ('Trying to run predict on a tree that has not been fit!')
@@ -241,11 +248,12 @@ class RandomForest:
     Random forest
 
     Parameters:
-    n_trees (int): number of trees 
-    bagging_frac (int): fraction of training set used for training each tree  
-    node_depth (int): maximum tree depth 
-    n_search_pts (int): number of points used to search for optimal decision threshold 
-    max_features_per_node (int): maximum features each node is allowed to use 
+
+    - n_trees (int): number of trees 
+    - bagging_frac (int): fraction of training set used for training each tree  
+    - node_depth (int): maximum tree depth 
+    - n_search_pts (int): number of points used to search for optimal decision threshold 
+    - max_features_per_node (int): maximum features each node is allowed to use 
     '''
     def __init__(self, n_trees, bagging_frac, node_depth, n_search_pts, max_features_per_node):
         self.trees = [BinaryDecisionTree(node_depth, n_search_pts, max_features_per_node) 
@@ -257,8 +265,9 @@ class RandomForest:
         Fit the forest 
 
         Parameters:
-        X (ndarray): features 
-        y (ndaray): labels 
+
+        - X (ndarray): features 
+        - y (ndaray): labels 
         '''
         for tree in self.trees: 
             N = 0
@@ -272,7 +281,8 @@ class RandomForest:
         Run inference 
 
         Parameters 
-        X (ndarray): features 
+        
+        - X (ndarray): features 
         '''
 
         return np.mean([tree.predict(X) for tree in self.trees], axis=0)
