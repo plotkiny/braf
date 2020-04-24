@@ -1,0 +1,2067 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
+    
+    
+      
+        <title>Forest - braf</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#4caf50">
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="green" data-md-color-accent="lightgreen">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#module-brafforest" tabindex="0" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../.." title="braf" aria-label="braf" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              braf
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Forest
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/sidnarayanan/braf/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    braf
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../.." title="braf" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    braf
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/sidnarayanan/braf/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    braf
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Reference
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Reference
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1" checked>
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Braf
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        Braf
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../braf/" title="Braf" class="md-nav__link">
+      Braf
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Forest
+      </label>
+    
+    <a href="./" title="Forest" class="md-nav__link md-nav__link--active">
+      Forest
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    Variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#binarydecisionnode" class="md-nav__link">
+    BinaryDecisionNode
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#static-methods" class="md-nav__link">
+    Static methods
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#delta_gini" class="md-nav__link">
+    delta_gini
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gini_index" class="md-nav__link">
+    gini_index
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#max_delta_gini" class="md-nav__link">
+    max_delta_gini
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#binarydecisiontree" class="md-nav__link">
+    BinaryDecisionTree
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fit" class="md-nav__link">
+    fit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predict" class="md-nav__link">
+    predict
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#randomforest" class="md-nav__link">
+    RandomForest
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#methods_1" class="md-nav__link">
+    Methods
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fit_1" class="md-nav__link">
+    fit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predict_1" class="md-nav__link">
+    predict
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../knn/" title="Knn" class="md-nav__link">
+      Knn
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../plot/" title="Plot" class="md-nav__link">
+      Plot
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../utils/" title="Utils" class="md-nav__link">
+      Utils
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    Variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#binarydecisionnode" class="md-nav__link">
+    BinaryDecisionNode
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#static-methods" class="md-nav__link">
+    Static methods
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#delta_gini" class="md-nav__link">
+    delta_gini
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gini_index" class="md-nav__link">
+    gini_index
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#max_delta_gini" class="md-nav__link">
+    max_delta_gini
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#binarydecisiontree" class="md-nav__link">
+    BinaryDecisionTree
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fit" class="md-nav__link">
+    fit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predict" class="md-nav__link">
+    predict
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#randomforest" class="md-nav__link">
+    RandomForest
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#methods_1" class="md-nav__link">
+    Methods
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fit_1" class="md-nav__link">
+    fit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predict_1" class="md-nav__link">
+    predict
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/sidnarayanan/braf/edit/master/reference/braf/forest.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="module-brafforest">Module braf.forest</h1>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">tqdm</span>
+
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
+
+<span class="n">EPS</span> <span class="o">=</span> <span class="mf">1e-12</span>
+
+<span class="c1"># put this in top-level scope so it can be pickled</span>
+
+<span class="k">def</span> <span class="nf">_return_const</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+    <span class="k">return</span> <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;val&#39;</span><span class="p">]</span>
+
+<span class="k">class</span> <span class="nc">BinaryDecisionNode</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">node_depth</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_search_pts</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">max_features</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+        <span class="sd">&#39;&#39;&#39;</span>
+
+<span class="sd">        Binary decision node.</span>
+
+<span class="sd">        On construction, the BinaryDecisionNode fits itself</span>
+
+<span class="sd">        to the provided data. If node_depth &gt; 0, it will create</span>
+
+<span class="sd">        and fit two nodes on the results of this node</span>
+
+<span class="sd">        Parameters:</span>
+
+<span class="sd">        - X (ndarray): features</span>
+
+<span class="sd">        - y (ndarray): binary labels</span>
+
+<span class="sd">        - node_depth (int): number of nodes to descend</span>
+
+<span class="sd">        - n_search_pts (int): number of points in the grid used to search for an</span>
+
+<span class="sd">                              optimal decision threshold</span>
+
+<span class="sd">        - max_features (int): maximum number of features to optimize over at each node</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+
+        <span class="c1"># we assume data is in the form (samples, features)</span>
+
+        <span class="c1"># and labels are a 1D binary vector</span>
+
+        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="kp">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
+
+        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="kp">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">decision_boundary</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">decision_feature</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="c1"># randomly sample at most max_features for fitting</span>
+
+        <span class="k">if</span> <span class="n">max_features</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+
+            <span class="n">features</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">arange</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="kp">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+        <span class="k">else</span><span class="p">:</span>
+
+            <span class="n">features</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="kp">permutation</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="kp">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])[:</span><span class="n">max_features</span><span class="p">]</span>
+
+        <span class="c1"># gini index of the data fed into this node</span>
+
+        <span class="n">gini0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gini_index</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+        <span class="n">best_delta</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">for</span> <span class="n">i_ft</span> <span class="ow">in</span> <span class="n">features</span><span class="p">:</span>
+
+            <span class="c1"># iterate over the possible features, find the best</span>
+
+            <span class="c1"># boundary and the corresponding gini index. pick the</span>
+
+            <span class="c1"># choice of i_ft and boundary that maximizes the drop</span>
+
+            <span class="c1"># from gini0 (new_delta)</span>
+
+            <span class="n">x</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:,</span><span class="n">i_ft</span><span class="p">]</span>
+
+            <span class="n">boundary</span><span class="p">,</span> <span class="n">new_delta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_delta_gini</span><span class="p">(</span>
+
+                    <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">lo</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="kp">min</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">hi</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="kp">max</span><span class="p">(</span><span class="n">x</span><span class="p">),</span>
+
+                    <span class="n">n_search_pts</span><span class="o">=</span><span class="n">n_search_pts</span><span class="p">,</span> <span class="n">gini0</span><span class="o">=</span><span class="n">gini0</span>
+
+                <span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">new_delta</span> <span class="o">&gt;</span> <span class="n">best_delta</span><span class="p">:</span>
+
+                <span class="n">best_delta</span> <span class="o">=</span> <span class="n">new_delta</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">decision_feature</span> <span class="o">=</span> <span class="n">i_ft</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">decision_boundary</span> <span class="o">=</span> <span class="n">boundary</span>
+
+        <span class="n">leaf</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># whether this node is a leaf in the tree</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">decision_boundary</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+            <span class="c1"># we found a valid decision boundary</span>
+
+            <span class="c1"># run inference on this node to split the dataset.</span>
+
+            <span class="n">mask</span> <span class="o">=</span> <span class="bp">self</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">descend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+            <span class="c1"># save the mean values of the left and right splits.</span>
+
+            <span class="c1"># not strictly needed if this is not a leaf, but it&#39;s</span>
+
+            <span class="c1"># useful for debugging. could also be useful if we ever</span>
+
+            <span class="c1"># prune the tree.</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">right_val</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="kp">sum</span><span class="p">()</span> <span class="o">/</span> <span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="kp">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">EPS</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">left_val</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="o">~</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="kp">sum</span><span class="p">()</span> <span class="o">/</span> <span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="o">~</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="kp">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">EPS</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">node_depth</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+
+                <span class="c1"># if we haven&#39;t reached the max node depth, fit left</span>
+
+                <span class="c1"># and right nodes:</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">BinaryDecisionNode</span><span class="p">(</span>
+
+                        <span class="n">X</span><span class="p">[</span><span class="o">~</span><span class="n">mask</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="o">~</span><span class="n">mask</span><span class="p">],</span> <span class="n">node_depth</span><span class="o">=</span><span class="n">node_depth</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+
+                        <span class="n">n_search_pts</span><span class="o">=</span><span class="n">n_search_pts</span>
+
+                    <span class="p">)</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">BinaryDecisionNode</span><span class="p">(</span>
+
+                        <span class="n">X</span><span class="p">[</span><span class="n">mask</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">mask</span><span class="p">],</span> <span class="n">node_depth</span><span class="o">=</span><span class="n">node_depth</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+
+                        <span class="n">n_search_pts</span><span class="o">=</span><span class="n">n_search_pts</span>
+
+                    <span class="p">)</span>
+
+                <span class="n">leaf</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1"># has children -&gt; not a leaf</span>
+
+        <span class="k">else</span><span class="p">:</span>
+
+            <span class="c1"># no valid decision boundary, so left = right. use the mean</span>
+
+            <span class="c1"># of the current dataset as the prediction for this node</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">left_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">right_val</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">mean</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">leaf</span><span class="p">:</span>
+
+            <span class="c1"># if no children, make the &#39;children&#39; the mean value in each category</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">_return_const</span><span class="p">,</span> <span class="n">val</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">right_val</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">_return_const</span><span class="p">,</span> <span class="n">val</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">left_val</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">descend</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+
+        <span class="sd">&#39;&#39;&#39;</span>
+
+<span class="sd">        infer the decision node on a dataset.</span>
+
+<span class="sd">        if descend=true, we traverse the children</span>
+
+<span class="sd">        until we hit leaves. otherwise, just return a</span>
+
+<span class="sd">        boolean array of the decision at this node</span>
+
+<span class="sd">        Parameters:</span>
+
+<span class="sd">        - X (ndarray): features</span>
+
+<span class="sd">        - y (ndarray): labels, optional</span>
+
+<span class="sd">        - descend (boolean): should we descend down into children nodes or not</span>
+
+<span class="sd">        Returns:</span>
+
+<span class="sd">        - ndarray: if descend, we guarantee to end at a leaf, so return the prediction</span>
+
+<span class="sd">                 of leaf nodes. if not descend, just return a 0-1 array containing the</span>
+
+<span class="sd">                 the decision of this node</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+
+        <span class="k">if</span> <span class="n">y</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+
+            <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">ones</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="kp">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># dummy</span>
+
+        <span class="n">yhat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">ones_like</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">decision_boundary</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+
+            <span class="c1"># this node is a dummy</span>
+
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">left</span><span class="p">()</span> <span class="o">*</span> <span class="n">yhat</span>
+
+        <span class="n">mask</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:,</span> <span class="bp">self</span><span class="o">.</span><span class="n">decision_feature</span><span class="p">]</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">decision_boundary</span>
+
+        <span class="k">if</span> <span class="n">descend</span><span class="p">:</span>
+
+            <span class="n">yhat</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">mask</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">mask</span><span class="p">],</span> <span class="n">descend</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+            <span class="n">yhat</span><span class="p">[</span><span class="o">~</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="o">~</span><span class="n">mask</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="o">~</span><span class="n">mask</span><span class="p">],</span> <span class="n">descend</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">yhat</span>
+
+        <span class="k">else</span><span class="p">:</span>
+
+            <span class="k">return</span> <span class="n">mask</span>
+
+    <span class="nd">@staticmethod</span>
+
+    <span class="k">def</span> <span class="nf">delta_gini</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">boundary</span><span class="p">,</span> <span class="n">gini0</span><span class="p">):</span>
+
+        <span class="sd">&#39;&#39;&#39;compute the drop in gini index (with</span>
+
+<span class="sd">        respect to gini0) if we place a decision</span>
+
+<span class="sd">        boundary at boundary&#39;&#39;&#39;</span>
+
+        <span class="n">mask</span> <span class="o">=</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">boundary</span>
+
+        <span class="n">gini_hi</span> <span class="o">=</span> <span class="n">BinaryDecisionNode</span><span class="o">.</span><span class="n">gini_index</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">mask</span><span class="p">])</span>
+
+        <span class="n">gini_lo</span> <span class="o">=</span> <span class="n">BinaryDecisionNode</span><span class="o">.</span><span class="n">gini_index</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="o">~</span><span class="n">mask</span><span class="p">])</span>
+
+        <span class="n">frac</span> <span class="o">=</span> <span class="n">mask</span><span class="o">.</span><span class="kp">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="o">.</span><span class="kp">sum</span><span class="p">()</span> <span class="o">/</span> <span class="n">mask</span><span class="o">.</span><span class="kp">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="n">delta</span> <span class="o">=</span> <span class="n">gini0</span> <span class="o">-</span> <span class="p">(</span><span class="n">frac</span> <span class="o">*</span> <span class="n">gini_hi</span><span class="p">)</span> <span class="o">-</span> <span class="p">((</span><span class="mi">1</span> <span class="o">-</span> <span class="n">frac</span><span class="p">)</span> <span class="o">*</span> <span class="n">gini_lo</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">delta</span>
+
+    <span class="nd">@staticmethod</span>
+
+    <span class="k">def</span> <span class="nf">max_delta_gini</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">,</span> <span class="n">n_search_pts</span><span class="p">,</span> <span class="n">gini0</span><span class="p">):</span>
+
+        <span class="sd">&#39;&#39;&#39;grid search to maximize</span>
+
+<span class="sd">        the drop in gini index (with respect to</span>
+
+<span class="sd">        gini0) in a specified range</span>
+
+<span class="sd">        Returns:</span>
+
+<span class="sd">        - decision boundary that maximizes delta gini, delta gini&#39;&#39;&#39;</span>
+
+        <span class="n">search_pts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">linspace</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">,</span> <span class="n">n_search_pts</span><span class="p">)</span>
+
+        <span class="n">best_delta</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="n">best_threshold</span> <span class="o">=</span> <span class="n">lo</span>
+
+        <span class="k">for</span> <span class="n">bndry</span> <span class="ow">in</span> <span class="n">search_pts</span><span class="p">:</span>
+
+            <span class="n">new_delta</span> <span class="o">=</span> <span class="n">BinaryDecisionNode</span><span class="o">.</span><span class="n">delta_gini</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">bndry</span><span class="p">,</span> <span class="n">gini0</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">new_delta</span> <span class="o">&gt;</span> <span class="n">best_delta</span><span class="p">:</span>
+
+                <span class="n">best_delta</span> <span class="o">=</span> <span class="n">new_delta</span>
+
+                <span class="n">best_threshold</span> <span class="o">=</span> <span class="n">bndry</span>
+
+        <span class="k">return</span> <span class="n">best_threshold</span><span class="p">,</span> <span class="n">best_delta</span>
+
+    <span class="nd">@staticmethod</span>
+
+    <span class="k">def</span> <span class="nf">gini_index</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+
+        <span class="sd">&#39;&#39;&#39;binary gini index&#39;&#39;&#39;</span>
+
+        <span class="n">p0</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="kp">sum</span><span class="p">()</span> <span class="o">/</span> <span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="kp">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">EPS</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">p0</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="sd">&#39;&#39;&#39;</span>
+
+<span class="sd">        recursively write a descriptive string for this node</span>
+
+<span class="sd">        and its children. useful for debugging</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+
+        <span class="k">def</span> <span class="nf">parse_child</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+
+            <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="kp">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+            <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;        &#39;</span> <span class="o">+</span> <span class="n">ss</span> <span class="k">for</span> <span class="n">ss</span> <span class="ow">in</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">:]]</span>
+
+            <span class="k">return</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+        <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">decision_feature</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+
+            <span class="n">s</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;Node(pred=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">left</span><span class="p">()</span><span class="si">}</span><span class="s1">)&#39;</span>
+
+        <span class="k">else</span><span class="p">:</span>
+
+            <span class="n">s</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;Node(ft=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">decision_feature</span><span class="si">}</span><span class="s1">, bndry=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">decision_boundary</span><span class="si">}</span><span class="s1">&#39;</span>
+
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">BinaryDecisionNode</span><span class="p">):</span>
+
+                <span class="n">s</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;,</span><span class="se">\n</span><span class="s1">     L: </span><span class="si">{</span><span class="n">parse_child</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">left</span><span class="p">))</span><span class="si">}</span><span class="s1">&#39;</span>
+
+                <span class="n">s</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;,</span><span class="se">\n</span><span class="s1">     R: </span><span class="si">{</span><span class="n">parse_child</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">right</span><span class="p">))</span><span class="si">}</span><span class="s1">&#39;</span>
+
+            <span class="k">else</span><span class="p">:</span>
+
+                <span class="n">s</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;, L=</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">left</span><span class="p">())</span><span class="si">}</span><span class="s1">&#39;</span>
+
+                <span class="n">s</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;, R=</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">right</span><span class="p">())</span><span class="si">}</span><span class="s1">&#39;</span>
+
+            <span class="n">s</span> <span class="o">+=</span> <span class="s1">&#39;)&#39;</span>
+
+        <span class="k">return</span> <span class="n">s</span>
+
+<span class="k">class</span> <span class="nc">BinaryDecisionTree</span><span class="p">:</span>
+
+    <span class="sd">&#39;&#39;&#39;</span>
+
+<span class="sd">    Binary decision tree.</span>
+
+<span class="sd">    Parameters:</span>
+
+<span class="sd">    - node_depth (int): maximum depth of the tree</span>
+
+<span class="sd">    - n_search_pts (int): number of points in the search grid</span>
+
+<span class="sd">    - max_features_per_node (int): maximum number of features each node is allowed to use</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node_depth</span><span class="p">,</span> <span class="n">n_search_pts</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">max_features_per_node</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">node_depth</span> <span class="o">=</span> <span class="n">node_depth</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_features</span> <span class="o">=</span> <span class="n">max_features_per_node</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_search_pts</span> <span class="o">=</span> <span class="n">n_search_pts</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">root</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+
+        <span class="sd">&#39;&#39;&#39;</span>
+
+<span class="sd">        Fit the tree</span>
+
+<span class="sd">        Parameters:</span>
+
+<span class="sd">        - X (ndarray): features</span>
+
+<span class="sd">        - y (ndaray): labels</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">root</span> <span class="o">=</span> <span class="n">BinaryDecisionNode</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">node_depth</span><span class="p">,</span>
+
+                                       <span class="n">n_search_pts</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">n_search_pts</span><span class="p">,</span>
+
+                                       <span class="n">max_features</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_features</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+
+        <span class="sd">&#39;&#39;&#39;</span>
+
+<span class="sd">        Run inference</span>
+
+<span class="sd">        Parameters</span>
+
+<span class="sd">        - X (ndarray): features</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+
+        <span class="k">assert</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Trying to run predict on a tree that has not been fit!&#39;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">RandomForest</span><span class="p">:</span>
+
+    <span class="sd">&#39;&#39;&#39;</span>
+
+<span class="sd">    Random forest</span>
+
+<span class="sd">    Parameters:</span>
+
+<span class="sd">    - n_trees (int): number of trees</span>
+
+<span class="sd">    - bagging_frac (int): fraction of training set used for training each tree</span>
+
+<span class="sd">    - node_depth (int): maximum tree depth</span>
+
+<span class="sd">    - n_search_pts (int): number of points used to search for optimal decision threshold</span>
+
+<span class="sd">    - max_features_per_node (int): maximum features each node is allowed to use</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_trees</span><span class="p">,</span> <span class="n">bagging_frac</span><span class="p">,</span> <span class="n">node_depth</span><span class="p">,</span> <span class="n">n_search_pts</span><span class="p">,</span> <span class="n">max_features_per_node</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">trees</span> <span class="o">=</span> <span class="p">[</span><span class="n">BinaryDecisionTree</span><span class="p">(</span><span class="n">node_depth</span><span class="p">,</span> <span class="n">n_search_pts</span><span class="p">,</span> <span class="n">max_features_per_node</span><span class="p">)</span>
+
+                      <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_trees</span><span class="p">)]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">bagging_frac</span> <span class="o">=</span> <span class="n">bagging_frac</span>
+
+    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+
+        <span class="sd">&#39;&#39;&#39;</span>
+
+<span class="sd">        Fit the forest</span>
+
+<span class="sd">        Parameters:</span>
+
+<span class="sd">        - X (ndarray): features</span>
+
+<span class="sd">        - y (ndaray): labels</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+
+        <span class="k">for</span> <span class="n">tree</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">trees</span><span class="p">:</span>
+
+            <span class="n">N</span> <span class="o">=</span> <span class="mi">0</span>
+
+            <span class="k">while</span> <span class="n">N</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+
+                <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="kp">binomial</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="kp">size</span><span class="o">=</span><span class="n">X</span><span class="o">.</span><span class="kp">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">p</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">bagging_frac</span><span class="p">)</span><span class="o">.</span><span class="kp">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span>
+
+                <span class="n">N</span> <span class="o">=</span> <span class="n">mask</span><span class="o">.</span><span class="kp">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># make sure we never sample an empty set</span>
+
+            <span class="n">tree</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">mask</span><span class="p">,</span> <span class="p">:],</span> <span class="n">y</span><span class="p">[</span><span class="n">mask</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+
+        <span class="sd">&#39;&#39;&#39;</span>
+
+<span class="sd">        Run inference</span>
+
+<span class="sd">        Parameters</span>
+
+<span class="sd">        - X (ndarray): features</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="kp">mean</span><span class="p">([</span><span class="n">tree</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="k">for</span> <span class="n">tree</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">trees</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="k">return</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">trees</span><span class="p">])</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])</span>
+
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span>       <span class="mi">0</span><span class="p">,</span>      <span class="mi">0</span><span class="p">,</span>       <span class="mi">1</span><span class="p">,</span>     <span class="mi">1</span><span class="p">,</span>       <span class="mi">0</span><span class="p">])</span>
+
+    <span class="n">tree</span> <span class="o">=</span> <span class="n">BinaryDecisionTree</span><span class="p">(</span><span class="n">node_depth</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+    <span class="n">tree</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">tree</span><span class="p">))</span>
+
+    <span class="n">yhat</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">y</span><span class="p">,</span> <span class="n">yhat</span><span class="p">],</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">))</span>
+
+    <span class="nb">print</span><span class="p">()</span>
+
+    <span class="n">forest</span> <span class="o">=</span> <span class="n">RandomForest</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">forest</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">forest</span><span class="p">))</span>
+
+    <span class="n">yhat</span> <span class="o">=</span> <span class="n">forest</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">y</span><span class="p">,</span> <span class="n">yhat</span><span class="p">],</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">))</span>
+</code></pre></div>
+
+
+</details>
+<h2 id="variables">Variables</h2>
+<div class="codehilite"><pre><span></span><code><span class="n">EPS</span>
+</code></pre></div>
+
+
+<h2 id="classes">Classes</h2>
+<h3 id="binarydecisionnode">BinaryDecisionNode</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">BinaryDecisionNode</span><span class="p">(</span>
+    <span class="n">X</span><span class="p">,</span>
+    <span class="n">y</span><span class="p">,</span>
+    <span class="n">node_depth</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">n_search_pts</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+    <span class="n">max_features</span><span class="o">=</span><span class="kc">None</span>
+<span class="p">)</span>
+</code></pre></div>
+
+
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nl">BinaryDecisionNode</span><span class="p">:</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">node_depth</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">n_search_pts</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="n">max_features</span><span class="o">=</span><span class="k">None</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">        </span><span class="s1">&#39;&#39;&#39;</span>
+
+<span class="s1">        Binary decision node.</span>
+
+<span class="s1">        On construction, the BinaryDecisionNode fits itself</span>
+
+<span class="s1">        to the provided data. If node_depth &gt; 0, it will create</span>
+
+<span class="s1">        and fit two nodes on the results of this node</span>
+
+<span class="s1">        Parameters:</span>
+
+<span class="s1">        - X (ndarray): features</span>
+
+<span class="s1">        - y (ndarray): binary labels</span>
+
+<span class="s1">        - node_depth (int): number of nodes to descend</span>
+
+<span class="s1">        - n_search_pts (int): number of points in the grid used to search for an</span>
+
+<span class="s1">                              optimal decision threshold</span>
+
+<span class="s1">        - max_features (int): maximum number of features to optimize over at each node</span>
+
+<span class="s1">        &#39;&#39;&#39;</span><span class="w"></span>
+
+<span class="w">        </span><span class="err">#</span><span class="w"> </span><span class="n">we</span><span class="w"> </span><span class="n">assume</span><span class="w"> </span><span class="k">data</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">form</span><span class="w"> </span><span class="p">(</span><span class="n">samples</span><span class="p">,</span><span class="w"> </span><span class="n">features</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="err">#</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">labels</span><span class="w"> </span><span class="k">are</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="mi">1</span><span class="n">D</span><span class="w"> </span><span class="nc">binary</span><span class="w"> </span><span class="n">vector</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">assert</span><span class="w"> </span><span class="nf">len</span><span class="p">(</span><span class="n">X</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">assert</span><span class="w"> </span><span class="nf">len</span><span class="p">(</span><span class="n">y</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">self</span><span class="p">.</span><span class="n">decision_boundary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">self</span><span class="p">.</span><span class="n">decision_feature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="w"></span>
+
+<span class="w">        </span><span class="err">#</span><span class="w"> </span><span class="n">randomly</span><span class="w"> </span><span class="n">sample</span><span class="w"> </span><span class="k">at</span><span class="w"> </span><span class="n">most</span><span class="w"> </span><span class="n">max_features</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">fitting</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">max_features</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">None</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="n">X</span><span class="p">.</span><span class="n">shape</span><span class="o">[</span><span class="n">1</span><span class="o">]</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">else</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">permutation</span><span class="p">(</span><span class="n">X</span><span class="p">.</span><span class="n">shape</span><span class="o">[</span><span class="n">1</span><span class="o">]</span><span class="p">)</span><span class="o">[</span><span class="n">:max_features</span><span class="o">]</span><span class="w"></span>
+
+<span class="w">        </span><span class="err">#</span><span class="w"> </span><span class="n">gini</span><span class="w"> </span><span class="k">index</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">data</span><span class="w"> </span><span class="n">fed</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">node</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">gini0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">gini_index</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">best_delta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="n">i_ft</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nl">features</span><span class="p">:</span><span class="w"></span>
+
+<span class="w">            </span><span class="err">#</span><span class="w"> </span><span class="k">iterate</span><span class="w"> </span><span class="k">over</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">possible</span><span class="w"> </span><span class="n">features</span><span class="p">,</span><span class="w"> </span><span class="n">find</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">best</span><span class="w"></span>
+
+<span class="w">            </span><span class="err">#</span><span class="w"> </span><span class="n">boundary</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">corresponding</span><span class="w"> </span><span class="n">gini</span><span class="w"> </span><span class="k">index</span><span class="p">.</span><span class="w"> </span><span class="n">pick</span><span class="w"> </span><span class="n">the</span><span class="w"></span>
+
+<span class="w">            </span><span class="err">#</span><span class="w"> </span><span class="n">choice</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">i_ft</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">boundary</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">maximizes</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">drop</span><span class="w"></span>
+
+<span class="w">            </span><span class="err">#</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">gini0</span><span class="w"> </span><span class="p">(</span><span class="n">new_delta</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">X</span><span class="o">[</span><span class="n">:,i_ft</span><span class="o">]</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">boundary</span><span class="p">,</span><span class="w"> </span><span class="n">new_delta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">max_delta_gini</span><span class="p">(</span><span class="w"></span>
+
+<span class="w">                    </span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">lo</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="nf">min</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="w"> </span><span class="n">hi</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="nf">max</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="w"></span>
+
+<span class="w">                    </span><span class="n">n_search_pts</span><span class="o">=</span><span class="n">n_search_pts</span><span class="p">,</span><span class="w"> </span><span class="n">gini0</span><span class="o">=</span><span class="n">gini0</span><span class="w"></span>
+
+<span class="w">                </span><span class="p">)</span><span class="w"></span>
+
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="n">new_delta</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nl">best_delta</span><span class="p">:</span><span class="w"></span>
+
+<span class="w">                </span><span class="n">best_delta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new_delta</span><span class="w"></span>
+
+<span class="w">                </span><span class="n">self</span><span class="p">.</span><span class="n">decision_feature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i_ft</span><span class="w"></span>
+
+<span class="w">                </span><span class="n">self</span><span class="p">.</span><span class="n">decision_boundary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">boundary</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">leaf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">True</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="n">whether</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">leaf</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">tree</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">decision_boundary</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="k">None</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">            </span><span class="err">#</span><span class="w"> </span><span class="n">we</span><span class="w"> </span><span class="k">found</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">valid</span><span class="w"> </span><span class="n">decision</span><span class="w"> </span><span class="n">boundary</span><span class="w"></span>
+
+<span class="w">            </span><span class="err">#</span><span class="w"> </span><span class="n">run</span><span class="w"> </span><span class="n">inference</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">split</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">dataset</span><span class="p">.</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">mask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">self</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">descend</span><span class="o">=</span><span class="k">False</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">            </span><span class="err">#</span><span class="w"> </span><span class="k">save</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">mean</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="nf">left</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nf">right</span><span class="w"> </span><span class="n">splits</span><span class="p">.</span><span class="w"></span>
+
+<span class="w">            </span><span class="err">#</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">strictly</span><span class="w"> </span><span class="n">needed</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">leaf</span><span class="p">,</span><span class="w"> </span><span class="n">but</span><span class="w"> </span><span class="n">it</span><span class="s1">&#39;s</span>
+
+<span class="s1">            # useful for debugging. could also be useful if we ever</span>
+
+<span class="s1">            # prune the tree.</span>
+
+<span class="s1">            self.right_val = y[mask].sum() / (y[mask].shape[0] + EPS)</span>
+
+<span class="s1">            self.left_val = y[~mask].sum() / (y[~mask].shape[0] + EPS)</span>
+
+<span class="s1">            if node_depth &gt; 0:</span>
+
+<span class="s1">                # if we haven&#39;</span><span class="n">t</span><span class="w"> </span><span class="n">reached</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="nf">max</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="k">depth</span><span class="p">,</span><span class="w"> </span><span class="n">fit</span><span class="w"> </span><span class="nf">left</span><span class="w"></span>
+
+<span class="w">                </span><span class="err">#</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nf">right</span><span class="w"> </span><span class="nl">nodes</span><span class="p">:</span><span class="w"></span>
+
+<span class="w">                </span><span class="n">self</span><span class="p">.</span><span class="nf">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BinaryDecisionNode</span><span class="p">(</span><span class="w"></span>
+
+<span class="w">                        </span><span class="n">X</span><span class="o">[</span><span class="n">~mask</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">[</span><span class="n">~mask</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">node_depth</span><span class="o">=</span><span class="n">node_depth</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">                        </span><span class="n">n_search_pts</span><span class="o">=</span><span class="n">n_search_pts</span><span class="w"></span>
+
+<span class="w">                    </span><span class="p">)</span><span class="w"></span>
+
+<span class="w">                </span><span class="n">self</span><span class="p">.</span><span class="nf">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BinaryDecisionNode</span><span class="p">(</span><span class="w"></span>
+
+<span class="w">                        </span><span class="n">X</span><span class="o">[</span><span class="n">mask</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">[</span><span class="n">mask</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">node_depth</span><span class="o">=</span><span class="n">node_depth</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">                        </span><span class="n">n_search_pts</span><span class="o">=</span><span class="n">n_search_pts</span><span class="w"></span>
+
+<span class="w">                    </span><span class="p">)</span><span class="w"></span>
+
+<span class="w">                </span><span class="n">leaf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">False</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="n">children</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">leaf</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">else</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">            </span><span class="err">#</span><span class="w"> </span><span class="k">no</span><span class="w"> </span><span class="n">valid</span><span class="w"> </span><span class="n">decision</span><span class="w"> </span><span class="n">boundary</span><span class="p">,</span><span class="w"> </span><span class="n">so</span><span class="w"> </span><span class="nf">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">right</span><span class="p">.</span><span class="w"> </span><span class="k">use</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">mean</span><span class="w"></span>
+
+<span class="w">            </span><span class="err">#</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">current</span><span class="w"> </span><span class="n">dataset</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">prediction</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">node</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">self</span><span class="p">.</span><span class="n">left_val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">right_val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np</span><span class="p">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nl">leaf</span><span class="p">:</span><span class="w"></span>
+
+<span class="w">            </span><span class="err">#</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">no</span><span class="w"> </span><span class="n">children</span><span class="p">,</span><span class="w"> </span><span class="n">make</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="s1">&#39;children&#39;</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">mean</span><span class="w"> </span><span class="k">value</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="k">each</span><span class="w"> </span><span class="n">category</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">self</span><span class="p">.</span><span class="nf">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">partial</span><span class="p">(</span><span class="n">_return_const</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="o">=</span><span class="n">self</span><span class="p">.</span><span class="n">right_val</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">self</span><span class="p">.</span><span class="nf">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">partial</span><span class="p">(</span><span class="n">_return_const</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="o">=</span><span class="n">self</span><span class="p">.</span><span class="n">left_val</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">__call__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="k">None</span><span class="p">,</span><span class="w"> </span><span class="n">descend</span><span class="o">=</span><span class="k">True</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">        </span><span class="s1">&#39;&#39;&#39;</span>
+
+<span class="s1">        infer the decision node on a dataset.</span>
+
+<span class="s1">        if descend=true, we traverse the children</span>
+
+<span class="s1">        until we hit leaves. otherwise, just return a</span>
+
+<span class="s1">        boolean array of the decision at this node</span>
+
+<span class="s1">        Parameters:</span>
+
+<span class="s1">        - X (ndarray): features</span>
+
+<span class="s1">        - y (ndarray): labels, optional</span>
+
+<span class="s1">        - descend (boolean): should we descend down into children nodes or not</span>
+
+<span class="s1">        Returns:</span>
+
+<span class="s1">        - ndarray: if descend, we guarantee to end at a leaf, so return the prediction</span>
+
+<span class="s1">                 of leaf nodes. if not descend, just return a 0-1 array containing the</span>
+
+<span class="s1">                 the decision of this node</span>
+
+<span class="s1">        &#39;&#39;&#39;</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">None</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np</span><span class="p">.</span><span class="n">ones</span><span class="p">(</span><span class="n">X</span><span class="p">.</span><span class="n">shape</span><span class="o">[</span><span class="n">0</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="n">dummy</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">yhat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np</span><span class="p">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">decision_boundary</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">None</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">            </span><span class="err">#</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">dummy</span><span class="w"></span>
+
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="nf">left</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">yhat</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">mask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">X</span><span class="o">[</span><span class="n">:, self.decision_feature</span><span class="o">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">decision_boundary</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nl">descend</span><span class="p">:</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">yhat</span><span class="o">[</span><span class="n">mask</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="nf">right</span><span class="p">(</span><span class="n">X</span><span class="o">[</span><span class="n">mask</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">[</span><span class="n">mask</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">descend</span><span class="o">=</span><span class="k">True</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">yhat</span><span class="o">[</span><span class="n">~mask</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="nf">left</span><span class="p">(</span><span class="n">X</span><span class="o">[</span><span class="n">~mask</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">[</span><span class="n">~mask</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">descend</span><span class="o">=</span><span class="k">True</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">yhat</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">else</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">mask</span><span class="w"></span>
+
+<span class="w">    </span><span class="nv">@staticmethod</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">delta_gini</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">boundary</span><span class="p">,</span><span class="w"> </span><span class="n">gini0</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">        </span><span class="s1">&#39;&#39;&#39;compute the drop in gini index (with</span>
+
+<span class="s1">        respect to gini0) if we place a decision</span>
+
+<span class="s1">        boundary at boundary&#39;&#39;&#39;</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">mask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">boundary</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">gini_hi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BinaryDecisionNode</span><span class="p">.</span><span class="n">gini_index</span><span class="p">(</span><span class="n">y</span><span class="o">[</span><span class="n">mask</span><span class="o">]</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">gini_lo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BinaryDecisionNode</span><span class="p">.</span><span class="n">gini_index</span><span class="p">(</span><span class="n">y</span><span class="o">[</span><span class="n">~mask</span><span class="o">]</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">frac</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mask</span><span class="p">.</span><span class="n">astype</span><span class="p">(</span><span class="nc">int</span><span class="p">).</span><span class="nf">sum</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">mask</span><span class="p">.</span><span class="n">shape</span><span class="o">[</span><span class="n">0</span><span class="o">]</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">delta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gini0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">frac</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">gini_hi</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">((</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">frac</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">gini_lo</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">delta</span><span class="w"></span>
+
+<span class="w">    </span><span class="nv">@staticmethod</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">max_delta_gini</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">lo</span><span class="p">,</span><span class="w"> </span><span class="n">hi</span><span class="p">,</span><span class="w"> </span><span class="n">n_search_pts</span><span class="p">,</span><span class="w"> </span><span class="n">gini0</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">        </span><span class="s1">&#39;&#39;&#39;grid search to maximize</span>
+
+<span class="s1">        the drop in gini index (with respect to</span>
+
+<span class="s1">        gini0) in a specified range</span>
+
+<span class="s1">        Returns:</span>
+
+<span class="s1">        - decision boundary that maximizes delta gini, delta gini&#39;&#39;&#39;</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">search_pts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span><span class="w"> </span><span class="n">hi</span><span class="p">,</span><span class="w"> </span><span class="n">n_search_pts</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">best_delta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">best_threshold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lo</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="n">bndry</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nl">search_pts</span><span class="p">:</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">new_delta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BinaryDecisionNode</span><span class="p">.</span><span class="n">delta_gini</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">bndry</span><span class="p">,</span><span class="w"> </span><span class="n">gini0</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="n">new_delta</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nl">best_delta</span><span class="p">:</span><span class="w"></span>
+
+<span class="w">                </span><span class="n">best_delta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new_delta</span><span class="w"></span>
+
+<span class="w">                </span><span class="n">best_threshold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bndry</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">best_threshold</span><span class="p">,</span><span class="w"> </span><span class="n">best_delta</span><span class="w"></span>
+
+<span class="w">    </span><span class="nv">@staticmethod</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">gini_index</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">        </span><span class="s1">&#39;&#39;&#39;binary gini index&#39;&#39;&#39;</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">p0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">).</span><span class="nf">sum</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="p">.</span><span class="n">shape</span><span class="o">[</span><span class="n">0</span><span class="o">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">EPS</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">p0</span><span class="o">**</span><span class="mi">2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">__str__</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">        </span><span class="s1">&#39;&#39;&#39;</span>
+
+<span class="s1">        recursively write a descriptive string for this node</span>
+
+<span class="s1">        and its children. useful for debugging</span>
+
+<span class="s1">        &#39;&#39;&#39;</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">def</span><span class="w"> </span><span class="n">parse_child</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;\n&#39;</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="o">[</span><span class="n">:1</span><span class="o">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">[</span><span class="n">&#39;        &#39; + ss for ss in s[1:</span><span class="o">]</span><span class="err">]</span><span class="w"></span>
+
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;\n&#39;</span><span class="p">.</span><span class="k">join</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="n">decision_feature</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">None</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">s</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">f</span><span class="s1">&#39;Node(pred={self.left()})&#39;</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">else</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">s</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">f</span><span class="s1">&#39;Node(ft={self.decision_feature}, bndry={self.decision_boundary}&#39;</span><span class="w"></span>
+
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="n">isinstance</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="nf">left</span><span class="p">,</span><span class="w"> </span><span class="n">BinaryDecisionNode</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">                </span><span class="n">s</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">f</span><span class="s1">&#39;,\n     L: {parse_child(str(self.left))}&#39;</span><span class="w"></span>
+
+<span class="w">                </span><span class="n">s</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">f</span><span class="s1">&#39;,\n     R: {parse_child(str(self.right))}&#39;</span><span class="w"></span>
+
+<span class="w">            </span><span class="k">else</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">                </span><span class="n">s</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">f</span><span class="s1">&#39;, L={str(self.left())}&#39;</span><span class="w"></span>
+
+<span class="w">                </span><span class="n">s</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">f</span><span class="s1">&#39;, R={str(self.right())}&#39;</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">s</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s1">&#39;)&#39;</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">s</span><span class="w"></span>
+</code></pre></div>
+
+
+</details>
+<hr />
+<h4 id="static-methods">Static methods</h4>
+<h5 id="delta_gini">delta_gini</h5>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">delta_gini</span><span class="p">(</span>
+    <span class="n">x</span><span class="p">,</span>
+    <span class="n">y</span><span class="p">,</span>
+    <span class="n">boundary</span><span class="p">,</span>
+    <span class="n">gini0</span>
+<span class="p">)</span>
+</code></pre></div>
+
+
+<p>compute the drop in gini index (with
+respect to gini0) if we place a decision
+boundary at boundary</p>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nv">@staticmethod</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">delta_gini</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">boundary</span><span class="p">,</span><span class="w"> </span><span class="n">gini0</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">        </span><span class="s1">&#39;&#39;&#39;compute the drop in gini index (with</span>
+
+<span class="s1">        respect to gini0) if we place a decision</span>
+
+<span class="s1">        boundary at boundary&#39;&#39;&#39;</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">mask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">boundary</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">gini_hi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BinaryDecisionNode</span><span class="p">.</span><span class="n">gini_index</span><span class="p">(</span><span class="n">y</span><span class="o">[</span><span class="n">mask</span><span class="o">]</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">gini_lo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BinaryDecisionNode</span><span class="p">.</span><span class="n">gini_index</span><span class="p">(</span><span class="n">y</span><span class="o">[</span><span class="n">~mask</span><span class="o">]</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">frac</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mask</span><span class="p">.</span><span class="n">astype</span><span class="p">(</span><span class="nc">int</span><span class="p">).</span><span class="nf">sum</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">mask</span><span class="p">.</span><span class="n">shape</span><span class="o">[</span><span class="n">0</span><span class="o">]</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">delta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gini0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">frac</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">gini_hi</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">((</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">frac</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">gini_lo</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">delta</span><span class="w"></span>
+</code></pre></div>
+
+
+</details>
+<h5 id="gini_index">gini_index</h5>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">gini_index</span><span class="p">(</span>
+    <span class="n">y</span>
+<span class="p">)</span>
+</code></pre></div>
+
+
+<p>binary gini index</p>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nv">@staticmethod</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">gini_index</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">        </span><span class="s1">&#39;&#39;&#39;binary gini index&#39;&#39;&#39;</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">p0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">).</span><span class="nf">sum</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="p">.</span><span class="n">shape</span><span class="o">[</span><span class="n">0</span><span class="o">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">EPS</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">p0</span><span class="o">**</span><span class="mi">2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="w"></span>
+</code></pre></div>
+
+
+</details>
+<h5 id="max_delta_gini">max_delta_gini</h5>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">max_delta_gini</span><span class="p">(</span>
+    <span class="n">x</span><span class="p">,</span>
+    <span class="n">y</span><span class="p">,</span>
+    <span class="n">lo</span><span class="p">,</span>
+    <span class="n">hi</span><span class="p">,</span>
+    <span class="n">n_search_pts</span><span class="p">,</span>
+    <span class="n">gini0</span>
+<span class="p">)</span>
+</code></pre></div>
+
+
+<p>grid search to maximize
+the drop in gini index (with respect to
+gini0) in a specified range</p>
+<p>Returns: </p>
+<ul>
+<li>decision boundary that maximizes delta gini, delta gini</li>
+</ul>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="nv">@staticmethod</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">max_delta_gini</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">lo</span><span class="p">,</span><span class="w"> </span><span class="n">hi</span><span class="p">,</span><span class="w"> </span><span class="n">n_search_pts</span><span class="p">,</span><span class="w"> </span><span class="n">gini0</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">        </span><span class="s1">&#39;&#39;&#39;grid search to maximize</span>
+
+<span class="s1">        the drop in gini index (with respect to</span>
+
+<span class="s1">        gini0) in a specified range</span>
+
+<span class="s1">        Returns:</span>
+
+<span class="s1">        - decision boundary that maximizes delta gini, delta gini&#39;&#39;&#39;</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">search_pts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span><span class="w"> </span><span class="n">hi</span><span class="p">,</span><span class="w"> </span><span class="n">n_search_pts</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">best_delta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">best_threshold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lo</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="n">bndry</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nl">search_pts</span><span class="p">:</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">new_delta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BinaryDecisionNode</span><span class="p">.</span><span class="n">delta_gini</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">bndry</span><span class="p">,</span><span class="w"> </span><span class="n">gini0</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="n">new_delta</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nl">best_delta</span><span class="p">:</span><span class="w"></span>
+
+<span class="w">                </span><span class="n">best_delta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new_delta</span><span class="w"></span>
+
+<span class="w">                </span><span class="n">best_threshold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bndry</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">best_threshold</span><span class="p">,</span><span class="w"> </span><span class="n">best_delta</span><span class="w"></span>
+</code></pre></div>
+
+
+</details>
+<h3 id="binarydecisiontree">BinaryDecisionTree</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">BinaryDecisionTree</span><span class="p">(</span>
+    <span class="n">node_depth</span><span class="p">,</span>
+    <span class="n">n_search_pts</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+    <span class="n">max_features_per_node</span><span class="o">=</span><span class="kc">None</span>
+<span class="p">)</span>
+</code></pre></div>
+
+
+<p>Binary decision tree. </p>
+<p>Parameters:</p>
+<ul>
+<li>node_depth (int): maximum depth of the tree </li>
+<li>n_search_pts (int): number of points in the search grid </li>
+<li>max_features_per_node (int): maximum number of features each node is allowed to use </li>
+</ul>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="n">BinaryDecisionTree:</span>
+
+    <span class="s">&#39;&#39;&#39;</span>
+
+<span class="s">    Binary decision tree.</span>
+
+<span class="s">    Parameters:</span>
+
+<span class="s">    - node_depth (int): maximum depth of the tree</span>
+
+<span class="s">    - n_search_pts (int): number of points in the search grid</span>
+
+<span class="s">    - max_features_per_node (int): maximum number of features each node is allowed to use</span>
+
+<span class="s">    &#39;&#39;&#39;</span>
+
+    <span class="n">def</span> <span class="n">__init__</span>(<span class="nb">self</span>, <span class="n">node_depth</span>, <span class="n">n_search_pts</span>=<span class="mi">100</span>, <span class="n">max_features_per_node</span>=<span class="n">None</span>):
+
+        <span class="nb">self</span>.<span class="n">node_depth</span> = <span class="n">node_depth</span>
+
+        <span class="nb">self</span>.<span class="n">max_features</span> = <span class="n">max_features_per_node</span>
+
+        <span class="nb">self</span>.<span class="n">n_search_pts</span> = <span class="n">n_search_pts</span>
+
+        <span class="nb">self</span>.<span class="n">root</span> = <span class="n">None</span>
+
+    <span class="n">def</span> <span class="n">fit</span>(<span class="nb">self</span>, <span class="o">X</span>, <span class="n">y</span>):
+
+        <span class="s">&#39;&#39;&#39;</span>
+
+<span class="s">        Fit the tree</span>
+
+<span class="s">        Parameters:</span>
+
+<span class="s">        - X (ndarray): features</span>
+
+<span class="s">        - y (ndaray): labels</span>
+
+<span class="s">        &#39;&#39;&#39;</span>
+
+        <span class="nb">self</span>.<span class="n">root</span> = <span class="n">BinaryDecisionNode</span>(<span class="o">X</span>, <span class="n">y</span>, <span class="nb">self</span>.<span class="n">node_depth</span>,
+
+                                       <span class="n">n_search_pts</span>=<span class="nb">self</span>.<span class="n">n_search_pts</span>,
+
+                                       <span class="n">max_features</span>=<span class="nb">self</span>.<span class="n">max_features</span>)
+
+    <span class="n">def</span> <span class="n">predict</span>(<span class="nb">self</span>, <span class="o">X</span>):
+
+        <span class="s">&#39;&#39;&#39;</span>
+
+<span class="s">        Run inference</span>
+
+<span class="s">        Parameters</span>
+
+<span class="s">        - X (ndarray): features</span>
+
+<span class="s">        &#39;&#39;&#39;</span>
+
+        <span class="n">assert</span> (<span class="nb">self</span>.<span class="n">root</span> <span class="k">is</span> <span class="nb">not</span> <span class="n">None</span>), (<span class="s">&#39;Trying to run predict on a tree that has not been fit!&#39;</span>)
+
+        <span class="k">return</span> <span class="nb">self</span>.<span class="n">root</span>(<span class="o">X</span>)
+
+    <span class="n">def</span> <span class="n">__str__</span>(<span class="nb">self</span>):
+
+        <span class="k">return</span> <span class="n">str</span>(<span class="nb">self</span>.<span class="n">root</span>)
+</code></pre></div>
+
+
+</details>
+<hr />
+<h4 id="methods">Methods</h4>
+<h5 id="fit">fit</h5>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">fit</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">X</span><span class="p">,</span>
+    <span class="n">y</span>
+<span class="p">)</span>
+</code></pre></div>
+
+
+<p>Fit the tree</p>
+<p>Parameters:</p>
+<ul>
+<li>X (ndarray): features </li>
+<li>y (ndaray): labels </li>
+</ul>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><code>    <span class="n">def</span> <span class="n">fit</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+
+        <span class="s1">&#39;&#39;&#39;</span>
+
+<span class="s1">        Fit the tree</span>
+
+<span class="s1">        Parameters:</span>
+
+<span class="s1">        - X (ndarray): features</span>
+
+<span class="s1">        - y (ndaray): labels</span>
+
+<span class="s1">        &#39;&#39;&#39;</span>
+
+        <span class="k">self</span><span class="p">.</span><span class="n">root</span> <span class="o">=</span> <span class="n">BinaryDecisionNode</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="k">self</span><span class="p">.</span><span class="n">node_depth</span><span class="p">,</span>
+
+                                       <span class="n">n_search_pts</span><span class="o">=</span><span class="k">self</span><span class="p">.</span><span class="n">n_search_pts</span><span class="p">,</span>
+
+                                       <span class="n">max_features</span><span class="o">=</span><span class="k">self</span><span class="p">.</span><span class="n">max_features</span><span class="p">)</span>
+</code></pre></div>
+
+
+</details>
+<h5 id="predict">predict</h5>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">predict</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">X</span>
+<span class="p">)</span>
+</code></pre></div>
+
+
+<p>Run inference </p>
+<p>Parameters </p>
+<ul>
+<li>X (ndarray): features </li>
+</ul>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><code>    <span class="n">def</span> <span class="n">predict</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+
+        <span class="s1">&#39;&#39;&#39;</span>
+
+<span class="s1">        Run inference</span>
+
+<span class="s1">        Parameters</span>
+
+<span class="s1">        - X (ndarray): features</span>
+
+<span class="s1">        &#39;&#39;&#39;</span>
+
+        <span class="n">assert</span> <span class="p">(</span><span class="k">self</span><span class="p">.</span><span class="n">root</span> <span class="k">is</span> <span class="k">not</span> <span class="k">None</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Trying to run predict on a tree that has not been fit!&#39;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="k">self</span><span class="p">.</span><span class="n">root</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</code></pre></div>
+
+
+</details>
+<h3 id="randomforest">RandomForest</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">RandomForest</span><span class="p">(</span>
+    <span class="n">n_trees</span><span class="p">,</span>
+    <span class="n">bagging_frac</span><span class="p">,</span>
+    <span class="n">node_depth</span><span class="p">,</span>
+    <span class="n">n_search_pts</span><span class="p">,</span>
+    <span class="n">max_features_per_node</span>
+<span class="p">)</span>
+</code></pre></div>
+
+
+<p>Random forest</p>
+<p>Parameters:</p>
+<ul>
+<li>n_trees (int): number of trees </li>
+<li>bagging_frac (int): fraction of training set used for training each tree  </li>
+<li>node_depth (int): maximum tree depth </li>
+<li>n_search_pts (int): number of points used to search for optimal decision threshold </li>
+<li>max_features_per_node (int): maximum features each node is allowed to use </li>
+</ul>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nl">RandomForest</span><span class="p">:</span><span class="w"></span>
+
+<span class="w">    </span><span class="s1">&#39;&#39;&#39;</span>
+
+<span class="s1">    Random forest</span>
+
+<span class="s1">    Parameters:</span>
+
+<span class="s1">    - n_trees (int): number of trees</span>
+
+<span class="s1">    - bagging_frac (int): fraction of training set used for training each tree</span>
+
+<span class="s1">    - node_depth (int): maximum tree depth</span>
+
+<span class="s1">    - n_search_pts (int): number of points used to search for optimal decision threshold</span>
+
+<span class="s1">    - max_features_per_node (int): maximum features each node is allowed to use</span>
+
+<span class="s1">    &#39;&#39;&#39;</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="n">n_trees</span><span class="p">,</span><span class="w"> </span><span class="n">bagging_frac</span><span class="p">,</span><span class="w"> </span><span class="n">node_depth</span><span class="p">,</span><span class="w"> </span><span class="n">n_search_pts</span><span class="p">,</span><span class="w"> </span><span class="n">max_features_per_node</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">self</span><span class="p">.</span><span class="n">trees</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="n">BinaryDecisionTree(node_depth, n_search_pts, max_features_per_node)</span>
+
+<span class="n">                      for _ in range(n_trees)</span><span class="o">]</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">self</span><span class="p">.</span><span class="n">bagging_frac</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bagging_frac</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">fit</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">        </span><span class="s1">&#39;&#39;&#39;</span>
+
+<span class="s1">        Fit the forest</span>
+
+<span class="s1">        Parameters:</span>
+
+<span class="s1">        - X (ndarray): features</span>
+
+<span class="s1">        - y (ndaray): labels</span>
+
+<span class="s1">        &#39;&#39;&#39;</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="n">tree</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="nl">trees</span><span class="p">:</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+
+<span class="w">            </span><span class="k">while</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">                </span><span class="n">mask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">binomial</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="k">size</span><span class="o">=</span><span class="n">X</span><span class="p">.</span><span class="n">shape</span><span class="o">[</span><span class="n">0</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="o">=</span><span class="n">self</span><span class="p">.</span><span class="n">bagging_frac</span><span class="p">).</span><span class="n">astype</span><span class="p">(</span><span class="n">bool</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">                </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mask</span><span class="p">.</span><span class="n">shape</span><span class="o">[</span><span class="n">0</span><span class="o">]</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="n">make</span><span class="w"> </span><span class="n">sure</span><span class="w"> </span><span class="n">we</span><span class="w"> </span><span class="n">never</span><span class="w"> </span><span class="n">sample</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">empty</span><span class="w"> </span><span class="k">set</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">tree</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="o">[</span><span class="n">mask, :</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">[</span><span class="n">mask</span><span class="o">]</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">predict</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="n">X</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">        </span><span class="s1">&#39;&#39;&#39;</span>
+
+<span class="s1">        Run inference</span>
+
+<span class="s1">        Parameters</span>
+
+<span class="s1">        - X (ndarray): features</span>
+
+<span class="s1">        &#39;&#39;&#39;</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">np</span><span class="p">.</span><span class="n">mean</span><span class="p">(</span><span class="o">[</span><span class="n">tree.predict(X) for tree in self.trees</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">__str__</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;\n&#39;</span><span class="p">.</span><span class="k">join</span><span class="p">(</span><span class="o">[</span><span class="n">str(t) for t in self.trees</span><span class="o">]</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+
+
+</details>
+<hr />
+<h4 id="methods_1">Methods</h4>
+<h5 id="fit_1">fit</h5>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">fit</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">X</span><span class="p">,</span>
+    <span class="n">y</span>
+<span class="p">)</span>
+</code></pre></div>
+
+
+<p>Fit the forest </p>
+<p>Parameters:</p>
+<ul>
+<li>X (ndarray): features </li>
+<li>y (ndaray): labels </li>
+</ul>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">fit</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">        </span><span class="s1">&#39;&#39;&#39;</span>
+
+<span class="s1">        Fit the forest</span>
+
+<span class="s1">        Parameters:</span>
+
+<span class="s1">        - X (ndarray): features</span>
+
+<span class="s1">        - y (ndaray): labels</span>
+
+<span class="s1">        &#39;&#39;&#39;</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="n">tree</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">self</span><span class="p">.</span><span class="nl">trees</span><span class="p">:</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+
+<span class="w">            </span><span class="k">while</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">                </span><span class="n">mask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">binomial</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="k">size</span><span class="o">=</span><span class="n">X</span><span class="p">.</span><span class="n">shape</span><span class="o">[</span><span class="n">0</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="o">=</span><span class="n">self</span><span class="p">.</span><span class="n">bagging_frac</span><span class="p">).</span><span class="n">astype</span><span class="p">(</span><span class="n">bool</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">                </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mask</span><span class="p">.</span><span class="n">shape</span><span class="o">[</span><span class="n">0</span><span class="o">]</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="n">make</span><span class="w"> </span><span class="n">sure</span><span class="w"> </span><span class="n">we</span><span class="w"> </span><span class="n">never</span><span class="w"> </span><span class="n">sample</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">empty</span><span class="w"> </span><span class="k">set</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">tree</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="o">[</span><span class="n">mask, :</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">[</span><span class="n">mask</span><span class="o">]</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+
+
+</details>
+<h5 id="predict_1">predict</h5>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">predict</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">X</span>
+<span class="p">)</span>
+</code></pre></div>
+
+
+<p>Run inference </p>
+<p>Parameters </p>
+<ul>
+<li>X (ndarray): features </li>
+</ul>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><code>    <span class="n">def</span> <span class="n">predict</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+
+        <span class="s1">&#39;&#39;&#39;</span>
+
+<span class="s1">        Run inference</span>
+
+<span class="s1">        Parameters</span>
+
+<span class="s1">        - X (ndarray): features</span>
+
+<span class="s1">        &#39;&#39;&#39;</span>
+
+        <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="n">mean</span><span class="p">([</span><span class="n">tree</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="k">for</span> <span class="n">tree</span> <span class="k">in</span> <span class="k">self</span><span class="p">.</span><span class="n">trees</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div>
+
+
+</details>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../braf/" title="Braf" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Braf
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../" title="Index" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Index
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Powered by
+        <a href="http://timothycrosley.github.io/portray">portray.</a>
+        You too can
+        <a href="http://timothycrosley.github.io/portray">
+          portray</a>
+        your Python project well using automatic documentation.
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.c33a9706.js"></script>
+      
+      <script>app.initialize({version:"1.1",url:{base:"../../.."}})</script>
+      
+    
+  </body>
+</html>
