@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from .knn import KNN
 from .forest import RandomForest 
 import numpy as np
@@ -15,29 +17,29 @@ class BRAF:
     - minority_label (int): the label corresponding to the minority class 
     '''
 
-    def __init__(self, K, s, p, minority_label, *args, **kwargs): 
-        self.knn = KNN(K)
+    def __init__(self, K, s, p, minority_label, *args, **kwargs):
         self.rf1 = RandomForest(int(s * (1-p)), *args, **kwargs)
         self.rf2 = RandomForest(int(s * p), *args, **kwargs)
-        self.p = p 
-        self.min_label = minority_label 
+        self.k = K
+        self.p = p
+        self.min_label = minority_label
 
     def fit(self, X, y):
         '''
-        Fit BRAF 
+        Fit BRAF
 
         Parameters:
 
-        - X (ndarray): features 
-        - y (ndaray): labels 
+        - X (ndarray): features
+        - y (ndaray): labels
         '''
-        critical_idcs = self.knn.get_neighbors(X[y==self.min_label], X[y!=self.min_label]) 
+        critical_idcs = KNN.get_neighbors(X[y==self.min_label], X[y!=self.min_label], k=self.k)
         # critical_idcs contains duplicates, so flatten and remove
         critical_idcs = np.array(list(set(critical_idcs.reshape(-1))))
 
-        # fit on the whole dataset 
+        # fit on the whole dataset
         self.rf1.fit(X, y)
-        # fit on the critical area 
+        # fit on the critical area
         self.rf2.fit(X[critical_idcs, :], y[critical_idcs])
 
     def predict(self, X):
