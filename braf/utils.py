@@ -67,14 +67,16 @@ def knn_impute(df, missing_vals, imputed_vals={}, **kwargs):
             df_unmask = df[mask][feature_cols].values
             df_mask = df[~mask]
             df_mask = df_mask[feature_cols].values
-            #df_mask = df_mask[df_mask[y] != min_label][feature_cols].values
+            #ALTERNATIVE ALGORITHM APPROACH: df_mask = df_mask[df_mask[y] != min_label][feature_cols].values
             critical_nghbrs = KNN.get_neighbors(df_unmask, df_mask, k=k, metric=metric)
             critical_nghbrs_tup = list(zip(mask_index, critical_nghbrs))
+            imputed_vals_plac = {}
             for indx, nghbrs in critical_nghbrs_tup:
                 stat = df[col].iloc[nghbrs].median()  # using median here
                 stat = round(stat, 1)
-                imputed_vals[col] = stat
-                df.loc[indx, col] = imputed_vals[col]
+                imputed_vals_plac[indx] = stat
+                df.loc[indx, col] = stat
+            imputed_vals[col] = imputed_vals_plac
 
     return imputed_vals
 
