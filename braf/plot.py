@@ -1,4 +1,6 @@
-import numpy as np 
+
+
+import numpy as np
 import matplotlib.pyplot as plt 
 
 EPS = 1e-12

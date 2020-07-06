@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+
 
 from .knn import KNN
 from .forest import RandomForest 
